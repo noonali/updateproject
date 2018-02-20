@@ -51,9 +51,7 @@ class adminActivity : AppCompatActivity() {
         request.add(Send)
     }
 
- fun TostUplod(){
-     var i=1+1
- }
+ 
 
     }
 
