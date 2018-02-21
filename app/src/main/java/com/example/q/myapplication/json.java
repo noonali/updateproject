@@ -3,7 +3,13 @@ package com.example.q.myapplication;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 
 /**
@@ -31,7 +37,16 @@ public class json extends AsyncTask<String,Void,Void> {
             String pass_i=params[2];
             try {
                 URL url =new URL(url_lo);
+                HttpURLConnection   httpURLConnection=(HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoInput(true);
+                OutputStream os= httpURLConnection.getOutputStream();
+                BufferedWriter  bufferedWriter=new BufferedWriter(new OutputStreamWriter(os,"UTF"))
             } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 
