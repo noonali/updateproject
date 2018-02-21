@@ -16,7 +16,7 @@ import org.json.JSONObject
 import java.util.*
 
 
-
+// class new teacher
 class newActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,20 +24,18 @@ class newActivity : AppCompatActivity() {
         setContentView(R.layout.activity_new)
 
     }
-        //sign_new.setOnClickListener {
-           // var ID = new_id.text.toString()
-            //var Email = new_email.text.toString()
-            //val exp = Regex("\\W+([-_.]\\W+)*@\\W+([-.]\\W+)*\\.\\W+([-.]\\W+)*")
-            //if (exp.matches(Email)) {
-             //   var pass = genRandomNumber()
-           // }else{
-               // showtext.text = "Email is not correct"
-            //}
+
 
 
     fun sign_new(view: View) {
         var id_i = new_id.text.toString()
         var Email = new_email.text.toString()
+        // to  database  connection in class json
+        var mehode ="register"
+        val Json:json=json(this)
+        Json.execute(mehode,id_i,Email)
+        finish()
+        //end database  connection in class json
 
         val ex = Regex("\\W+([-_.]\\W+)*@\\W+([-.]\\W+)*\\.\\W+([-.]\\W+)*")
 
@@ -52,6 +50,7 @@ class newActivity : AppCompatActivity() {
                     if (succ) {
                         Toast.makeText(this, "successfully Registered", Toast.LENGTH_LONG).show()
                         var NEWT = Intent(this, MainActivity::class.java)
+                        //calling  RandomNumber code
                         var pass = genRandomNumber()
                         startActivity(NEWT)
                     } else {
@@ -91,7 +90,7 @@ class newActivity : AppCompatActivity() {
         }
 
     }
-
+     // method RandomNumber code
     fun genRandomNumber():Int
     {
         var ran="${Random().nextInt((8000-10)+10)}"

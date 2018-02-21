@@ -14,30 +14,29 @@ import kotlinx.android.synthetic.main.activity_current.*
 import org.json.JSONException
 import org.json.JSONObject
 
-
+//class current Teacher sigin in
 class currentActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_current)
 
-    }  //sign_current.setOnClickListener{
-           // var ID=current_code.text.toString()
-            //var Code=current_id.text.toString()
-            //if(ID =="g" && Code=="1")
-            //{
-                //Toast.makeText(this, "successfully Sigin in", Toast.LENGTH_LONG).show()
-                //var Current= Intent(this,MainActivity::class.java)
-                //startActivity(Current)
-            //}else {
-                //Showtext.text="ID or Code is Wrong"
-                //Toast.makeText(this, "ID or Code is Wrong", Toast.LENGTH_LONG).show()
+    }
 
     fun sign_current(view: View)
 
     {
         var id_i=current_code.text.toString()
         var Code_i=current_id.text.toString()
+
+        // from connection database in class json
+        var mehode ="register"
+        val Json:json=json(this)
+        Json.execute(mehode,id_i,Code_i)
+        finish()
+        //end connection database in class json
+
+
          //The result is received from a file php
          val lis= Response.Listener<String> {  response ->
             try{
@@ -61,7 +60,7 @@ class currentActivity : AppCompatActivity() {
         request.add(Send)
     }
 
-    // class send data to php file Because check login
+    // class database send data to php file Because check login
     class send: StringRequest {
         //Url is static
         companion object {

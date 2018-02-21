@@ -7,7 +7,7 @@ import com.android.volley.toolbox.StringRequest
 /**
  * Created by Q on 13/02/18.
  */
-// class send data to php file Because check login
+// class  database and send data to php file
 class send: StringRequest {
     //Url is static
     companion object {

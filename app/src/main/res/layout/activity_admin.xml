@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@android:color/background_light"
     android:orientation="vertical"
-    >
+
+    tools:context="com.example.q.myapplication.currentActivity">
 
     <TextView
         android:id="@+id/admin_ID"

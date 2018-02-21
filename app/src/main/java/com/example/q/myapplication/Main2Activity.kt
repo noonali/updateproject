@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import java.util.*
 
-
+//شاشة ترحيبية زيادة من عندي
 class Main2Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

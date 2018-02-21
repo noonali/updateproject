@@ -15,6 +15,7 @@ import org.json.JSONException
 import org.json.JSONObject
 
 
+// class admin login
 class adminActivity : AppCompatActivity() {
 
     //var g:RequestQueue?=null
@@ -29,9 +30,18 @@ class adminActivity : AppCompatActivity() {
         var id_i=admin_id.text.toString()
         var pass_i=admin_password.text.toString()
         // The result is received from a file php
-       // var mehode="register";
 
-         val lis= Response.Listener<String> {  response ->
+        // from connection database in class json
+        var mehode ="register"
+        val Json:json=json(this)
+        Json.execute(mehode,id_i,pass_i)
+        finish()
+        //end connection database in class json
+
+
+
+
+        val lis= Response.Listener<String> {  response ->
              try{
                    val j= JSONObject(response)
                     //check up  the  result correct or no
@@ -47,7 +57,7 @@ class adminActivity : AppCompatActivity() {
             Toast.makeText(this, "Catch", Toast.LENGTH_LONG).show()
              }
          }
-        // move to constructor
+        // move to constructor in class send
         val Send:send=send(id_i,pass_i,lis)
         val request:RequestQueue=Volley.newRequestQueue(this)
         request.add(Send)

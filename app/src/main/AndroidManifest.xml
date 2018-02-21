@@ -21,7 +21,9 @@
         <activity android:name=".adminActivity" />
         <activity android:name=".newActivity" />
         <activity android:name=".currentActivity" />
-        <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".uploadCV" />
+        <activity android:name=".uploadCV2"></activity>
     </application>
 
 </manifest>
