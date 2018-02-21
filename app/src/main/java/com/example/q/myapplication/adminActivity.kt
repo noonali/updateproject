@@ -32,8 +32,8 @@ class adminActivity : AppCompatActivity() {
         // The result is received from a file php
 
         // from connection database in class json
-        var mehode ="register"
-        val Json:json=json(this)
+        var mehode ="Login"
+        val Json:back=back(this)
         Json.execute(mehode,id_i,pass_i)
         finish()
         //end connection database in class json

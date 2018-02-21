@@ -30,8 +30,8 @@ class currentActivity : AppCompatActivity() {
         var Code_i=current_id.text.toString()
 
         // from connection database in class json
-        var mehode ="register"
-        val Json:json=json(this)
+        var mehode ="sigin in "
+        val Json: back=back(this)
         Json.execute(mehode,id_i,Code_i)
         finish()
         //end connection database in class json

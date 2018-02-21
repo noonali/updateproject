@@ -32,7 +32,7 @@ class newActivity : AppCompatActivity() {
         var Email = new_email.text.toString()
         // to  database  connection in class json
         var mehode ="register"
-        val Json:json=json(this)
+        val Json:back=back(this)
         Json.execute(mehode,id_i,Email)
         finish()
         //end database  connection in class json
