@@ -29,6 +29,8 @@ class adminActivity : AppCompatActivity() {
         var id_i=admin_id.text.toString()
         var pass_i=admin_password.text.toString()
         // The result is received from a file php
+       // var mehode="register";
+
          val lis= Response.Listener<String> {  response ->
              try{
                    val j= JSONObject(response)
@@ -51,7 +53,7 @@ class adminActivity : AppCompatActivity() {
         request.add(Send)
     }
 
- 
+
 
     }
 
